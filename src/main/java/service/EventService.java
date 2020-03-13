@@ -1,4 +1,4 @@
-package net.madvirus.spring4.chap07.event;
+package service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,6 +7,12 @@ import java.util.TreeMap;
 
 import javax.naming.directory.SearchControls;
 
+import org.springframework.stereotype.Component;
+
+import net.madvirus.spring4.chap07.event.Event;
+import net.madvirus.spring4.chap07.event.EventType;
+import net.madvirus.spring4.chap07.event.SearchOption;
+@Component
 public class EventService {
 	private SortedMap<Long,Event> eventMap= new TreeMap<>();
 	public EventService(){

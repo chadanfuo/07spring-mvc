@@ -1,16 +1,22 @@
-package net.madvirus.spring4.chap08.member;
+package controller;
 
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import net.madvirus.spring4.chap08.member.MemberInfo;
+import net.madvirus.spring4.chap08.member.OrderInfo;
+import service.MemberService;
+
 
 @Controller
 public class MemberController {
+	@Autowired
 	private MemberService memberService;
 	@RequestMapping("/members")
 	public String members(Model model){

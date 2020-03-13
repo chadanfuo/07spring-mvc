@@ -1,4 +1,4 @@
-package net.madvirus.spring4.chap07.ac;
+package service;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -6,6 +6,10 @@ import java.util.List;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
+import org.springframework.stereotype.Component;
+
+import net.madvirus.spring4.chap07.ac.AccessPerm;
+@Component
 public class AclService {
 	private SortedMap<String,AccessPerm> map=new TreeMap<>();
 	public AclService(){

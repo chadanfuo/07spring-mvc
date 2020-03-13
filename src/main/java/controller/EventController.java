@@ -1,20 +1,28 @@
-package net.madvirus.spring4.chap07.event;
+package controller;
 
 import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import net.madvirus.spring4.chap07.event.Event;
+import net.madvirus.spring4.chap07.event.EventType;
+import net.madvirus.spring4.chap07.event.SearchOption;
+import service.EventService;
+
 @Controller
 @RequestMapping("/event")
 public class EventController {
 	private static final String REDIRECT_EVENT_LIST= "redirect:/event/list";
+	
+	@Autowired
 	private EventService eventService;
 	
 	public EventController(){
