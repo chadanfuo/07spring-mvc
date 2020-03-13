@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	 xmlns:context="http://www.springframework.org/schema/context"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
 	http://www.springframework.org/schema/mvc
 	http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
 	<mvc:default-servlet-handler />
 
+	<context:component-scan base-package="controller,service"/>
+	
 	<mvc:view-controller path="/index" view-name="index" /><!-- 
 		컨트롤 없이 실행가능 -->
 
@@ -20,9 +26,7 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 
-	<bean class="net.madvirus.spring4.chap07.quickstart.HelloController" />
-	<bean class="net.madvirus.spring4.chap07.event.EventController" />
-
+	
 	
 	<bean id="memberService" class="net.madvirus.spring4.chap08.member.MemberService" />
 	<bean class="net.madvirus.spring4.chap08.member.RegistrationController">
@@ -38,7 +42,18 @@
 		<property name="defaultEncoding" value="UTF-8" />
 	</bean>
 	
+	<bean class="net.madvirus.spring4.chap07.quickstart.HelloController" />
+	<bean class="net.madvirus.spring4.chap07.event.EventController" />
+	
 	<bean class="net.madvirus.spring4.chap08.member.MemberController">
 		<property name="memberService" ref="memberService" />
+	</bean>
+	
+	<bean class="net.madvirus.spring4.chap07.search.SearchController"/>
+	
+	<bean id="aclService"  class="net.madvirus.spring4.chap07.ac.AclService"/>
+	
+	<bean class="net.madvirus.spring4.chap07.ac.AclController">
+		<property name="aclService" ref="aclService" />
 	</bean>
 </beans>

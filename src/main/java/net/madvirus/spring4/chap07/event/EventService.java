@@ -33,4 +33,7 @@ public class EventService {
 		} 
 		return result;
 	}
+	public Event getEvent(Long eventId){
+		return eventMap.get(eventId);
+	}
 }
