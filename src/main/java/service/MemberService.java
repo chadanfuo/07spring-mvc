@@ -48,5 +48,13 @@ public class MemberService {
 		mi.setAllowNoti(modReq.isAllowNoti());
 		mi.setAddress(modReq.getAddress());
 	}
+	
+	public MemberInfo getMemberInfoEmail(String email){
+		for(MemberInfo mi : memberMap.values()){
+			if(mi.getEmail().equals(email))
+				return mi;
+		}
+		return null;
+	}
 }
 
