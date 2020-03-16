@@ -8,7 +8,7 @@
 </head>
 <body>
 Accept :${acceptType }
-</br>
+<br>
 Auth Cookie :${auth }
 </body>
 </html>

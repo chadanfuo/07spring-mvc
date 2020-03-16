@@ -35,6 +35,16 @@ public class LoginController {
 		return LOGIN_FORM;
 	
 	}
+	
+	public LoginController() {
+		System.out.println("LoginController");
+	}
+	/*@RequestMapping("/auth/logout")
+	public String logout(HttpSession session){
+		session.invalidate();
+		return "redirect:/index.jsp";
+	}*/
+	
 	@RequestMapping(method=RequestMethod.POST)
 	public String login(@Valid LoginCommand loginCommand,Errors errors,
 			HttpServletRequest request){

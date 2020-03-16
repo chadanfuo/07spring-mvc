@@ -84,20 +84,39 @@
 		<li>리다이렉트:
 			<ul>
 				<li><a href="header/createauth">/header/createauth</a>:리다이렉트,SimpleHeaderController.createAuth()</li>
-				
+
 
 			</ul>
 		</li>
 		<li>값검증
 			<ul>
-				<li><a href="member/regist">/member/regist</a>:
-				값 검증, &lt;spring:hasBindErros name="memberInfo" /&gt;를 이용한 에러메시지,RegistrationController</li>
-				<li><a href="auth/login">/auth/login</a>:
-				@Valid 이용 값 검증, &lt;  from :from commandName="loginCommand"&gt;를 이용한 에러메시지, 글로벌 에러 메시지, LoginController</li>
+				<li><a href="member/regist">/member/regist</a>: 값 검증,
+					&lt;spring:hasBindErros name="memberInfo" /&gt;를 이용한
+					에러메시지,RegistrationController</li>
+				<li><a href="auth/login">/auth/login</a>: @Valid 이용 값 검증, &lt;
+					from :from commandName="loginCommand"&gt;를 이용한 에러메시지, 글로벌 에러 메시지,
+					LoginController</li>
 				<li><a href="member/modify?mid=m2">/member/modify?mid=m2</a>:
-				@Valid 및 JSR303 이용 값 검증,MemberModificationController</li>
-				
+					@Valid 및 JSR303 이용 값 검증,MemberModificationController</li>
+			</ul>
+		</li>
+		<li>값변환:
+			<ul>
+				<li><a href="member/regist">/member/regist</a>:
+					@DateTimeFormat,RegistrationController/MemberRegistRequest</li>
+				<li><a href="event/list">/event/list</a>:
+					@InitBinder와CustomDateEditor, EventController.list()</li>
+			</ul>
+		</li>
 
+		<li>HTTP 세션:
+			<ul>
+				<li><a href="auth/login">/auth/login</a>: HttpServletRequest를
+					통해 HttpSession사용, LoginController</li>
+				<li><a href="auth/logout">/auth/logout</a>: HttpSession 직접사용,
+					LogoutController</li>
+				<li><a href="newevent/step1">/newevent/step1</a>: 
+					@SessionAttributes 사용, EventCreationController</li>
 			</ul>
 		</li>
 	</ul>
