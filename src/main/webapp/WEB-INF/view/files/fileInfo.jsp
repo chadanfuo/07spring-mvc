@@ -4,9 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
+<title>파일정보</title>
 </head>
 <body>
-<meta http-equiv="Refresh" content="0;url=http://localhost:8080/aaa/index">
+파일정보:
+
+파일변경:
+<form method="post">
+	<input type="submit" value="파일교체">
+</form>
 </body>
 </html>

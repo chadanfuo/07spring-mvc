@@ -132,6 +132,22 @@
 				FileController.fileInfo()/NotFileInfoException</li>
 			</ul>
 		</li>
+		
+		<li>requestMapping (pattern 이용)
+			<ul>
+				<li><a href="files/a111">/files/a111</a>: 입셉션 클래스에 @Response Status사용,
+				FileController.fileInfo()/NoFileInfoException</li> 
+				<li><a href="files/aaa.download">/files/?*.download</a>: </li>
+				<li><a href="folders/aaa/bbb/ccc/files">/folders/**/files</a>: </li>
+			</ul>
+		</li>
+		<li>스프링 설정
+			<ul>
+				<li><a href="index">/index</a>: </li>
+				<li><a href="images/javalogo.jpg">/images/javalogo.jpg</a>:정적자원 </li>
+				//WEB-INF/resources/javalogo.jpg
+			</ul>
+		</li>
 	</ul>
 
 
