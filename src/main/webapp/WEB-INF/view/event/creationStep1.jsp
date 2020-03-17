@@ -14,7 +14,8 @@
 <body>
 <%-- <form:form commandName="eventForm" action="${pageContext.request.contextPath}/newevent/step2"> --%>
 <%-- <form:form commandName="eventForm" action="/aaa/newevent/step2"> --%>
-<form:form commandName="eventForm" action="/<%=request.getContextPath() %>/newevent/step2">
+<%-- <form:form commandName="eventForm" action="/<%=request.getContextPath() %>/newevent/step2"> --%>
+ <form:form commandName="eventForm" action="${pageContext.request.contextPath}/newevent/step2">
 <label for="name">이벤트명</label>:
 <input type="text" name="name" id="name" value="${eventForm.name }"/>
 <form:errors path="name"/><br>
@@ -26,6 +27,7 @@
 	</c:forEach>
 	</select>
 <form:errors path="type"/><br>
+<!--오늘날짜기준으로 그 다음날해야 잘됨  -->
 <label >이벤트 기간</label>:
 <input type="text" name="beginDate" value='<fmt:formatDate value="${eventForm.beginDate }" pattern="yyyyMMdd"/>'/>부터
 <input type="text" name="endDate" value='<fmt:formatDate value="${eventForm.endDate }" pattern="yyyyMMdd"/>'/>까지

@@ -23,6 +23,11 @@ public class EventService {
 		eventMap.put(5L, Event.create(5L,"ÇÃ·§Æû µ¥ÀÌ",EventType.CONFERENCE));
 		eventMap.put(6L, Event.create(6L,"µ¿Ãá ¼­Ä¿½º",EventType.CIRCUS));
 	}
+	public List<Event> getRecommendedEventService(){
+		List<Event> recommendList=new ArrayList<>();
+		recommendList.add(eventMap.get(1L));
+		return recommendList;
+	}
 	public List<Event> getOpenedEventList(SearchOption option){
 		List<Event> result=new ArrayList<>();
 		for(Event event : eventMap.values()){
